@@ -35,6 +35,8 @@ public:
 
     void swap(int index1, int index2);
 
+    void display();
+
 private:
 
     Card myCards[SIZE];

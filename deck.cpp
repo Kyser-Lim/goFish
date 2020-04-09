@@ -8,32 +8,36 @@
 
     Deck::Deck()
     {
-        int myIndex = 52;
+        myIndex = 52;
         int rank = 1;
 
         for(int i = 0; i < 13; i++)
         {
             myCards[i] = Card(rank, Card::spades);
+            rank++;
         }
 
-        rank = 0;
+        rank = 1;
 
         for(int i = 13; i < 26; i++)
         {
             myCards[i] = Card(rank, Card::hearts);
+            rank++;
         }
-        rank = 0;
+        rank = 1;
 
         for(int i = 26; i < 39; i++)
         {
             myCards[i] = Card(rank, Card::diamonds);
+            rank++;
         }
 
-        rank = 0;
+        rank = 1;
 
         for(int i = 39; i < 52; i++)
         {
             myCards[i] = Card(rank, Card::clubs);
+            rank++;
         }
     }
 
@@ -42,16 +46,20 @@
         int randIndex;
         srand(time_t(NULL)); //random set of number
 
-        for(int i = 0; i < 52; i++)
+        for(int i = 0; i < myIndex; i++)
         {
-            randIndex = rand() % 52; //gets a number within 0 and 52
+            randIndex = rand() % myIndex; //gets a number within 0 and 52
             swap(i, randIndex);
         }
     }
 
     Card Deck::dealCard()
     {
+        cout << "this is your index" << myIndex << endl;
+
         myIndex = myIndex - 1;
+        cout << "this is your index2" << myIndex << endl;
+
         return myCards[myIndex];
     }
 
@@ -68,4 +76,11 @@
         myCards[index2] = temp;
     }
 
-    
+    void Deck::display()
+    {
+        for(int i = 0; i<myIndex; i++)
+        {
+            cout << myCards[i] << endl;
+        }
+    }
+

@@ -12,15 +12,13 @@ iostream
 string
 -
 
-/Users/kendricklim/Desktop/GitHub/goFish/deck.cpp
-deck.h
-/Users/kendricklim/Desktop/GitHub/goFish/deck.h
-vector
--
-stdlib.h
--
-
 /Users/kendricklim/Desktop/GitHub/goFish/deck.h
 card.h
 /Users/kendricklim/Desktop/GitHub/goFish/card.h
+
+/Users/kendricklim/Desktop/GitHub/goFish/go_fish.cpp
+card.h
+/Users/kendricklim/Desktop/GitHub/goFish/card.h
+deck.h
+/Users/kendricklim/Desktop/GitHub/goFish/deck.h
 

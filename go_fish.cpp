@@ -22,7 +22,16 @@ int main()
         cout << "Card2 is the same as Card4" << endl;
     }
     Deck deck;
+    deck.display();
 
+Card card5;
+ card5 = deck.dealCard();
+//    cout << "this is your card5" << card5 << endl;
+
+//    deck.display();
+    deck.shuffle();
+    cout << "Shuffled deck:" << endl;
+    deck.display();
 
 
     return 0;
