@@ -204,6 +204,33 @@ deck.cpp.s:
 	$(MAKE) -f CMakeFiles/goFish.dir/build.make CMakeFiles/goFish.dir/deck.cpp.s
 .PHONY : deck.cpp.s
 
+go_fish.o: go_fish.cpp.o
+
+.PHONY : go_fish.o
+
+# target to build an object file
+go_fish.cpp.o:
+	$(MAKE) -f CMakeFiles/goFish.dir/build.make CMakeFiles/goFish.dir/go_fish.cpp.o
+.PHONY : go_fish.cpp.o
+
+go_fish.i: go_fish.cpp.i
+
+.PHONY : go_fish.i
+
+# target to preprocess a source file
+go_fish.cpp.i:
+	$(MAKE) -f CMakeFiles/goFish.dir/build.make CMakeFiles/goFish.dir/go_fish.cpp.i
+.PHONY : go_fish.cpp.i
+
+go_fish.s: go_fish.cpp.s
+
+.PHONY : go_fish.s
+
+# target to generate assembly for a file
+go_fish.cpp.s:
+	$(MAKE) -f CMakeFiles/goFish.dir/build.make CMakeFiles/goFish.dir/go_fish.cpp.s
+.PHONY : go_fish.cpp.s
+
 player.o: player.cpp.o
 
 .PHONY : player.o
@@ -249,6 +276,9 @@ help:
 	@echo "... deck.o"
 	@echo "... deck.i"
 	@echo "... deck.s"
+	@echo "... go_fish.o"
+	@echo "... go_fish.i"
+	@echo "... go_fish.s"
 	@echo "... player.o"
 	@echo "... player.i"
 	@echo "... player.s"

@@ -95,6 +95,9 @@
 		<Unit filename="/Users/kendricklim/Desktop/GitHub/goFish/deck.h">
 			<Option target="goFish"/>
 		</Unit>
+		<Unit filename="/Users/kendricklim/Desktop/GitHub/goFish/go_fish.cpp">
+			<Option target="goFish"/>
+		</Unit>
 		<Unit filename="/Users/kendricklim/Desktop/GitHub/goFish/player.cpp">
 			<Option target="goFish"/>
 		</Unit>

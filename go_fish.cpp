@@ -2,6 +2,7 @@
 // Created by Daniel Masud on 4/8/2020.
 //
 #include "card.h"
+#include "deck.h"
 int main()
 {
     Card::Suit s = Card::hearts;
@@ -20,6 +21,8 @@ int main()
     if(card2 == card4){
         cout << "Card2 is the same as Card4" << endl;
     }
+    Deck deck;
+
 
 
     return 0;

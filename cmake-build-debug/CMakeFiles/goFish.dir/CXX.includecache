@@ -15,22 +15,12 @@ string
 /Users/kendricklim/Desktop/GitHub/goFish/deck.cpp
 deck.h
 /Users/kendricklim/Desktop/GitHub/goFish/deck.h
-
-/Users/kendricklim/Desktop/GitHub/goFish/deck.h
-card.h
-/Users/kendricklim/Desktop/GitHub/goFish/card.h
-
-/Users/kendricklim/Desktop/GitHub/goFish/player.cpp
-player.h
-/Users/kendricklim/Desktop/GitHub/goFish/player.h
-
-/Users/kendricklim/Desktop/GitHub/goFish/player.h
-iostream
--
-string
--
 vector
 -
+stdlib.h
+-
+
+/Users/kendricklim/Desktop/GitHub/goFish/deck.h
 card.h
 /Users/kendricklim/Desktop/GitHub/goFish/card.h
 

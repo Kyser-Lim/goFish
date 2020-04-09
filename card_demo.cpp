@@ -1,4 +1,4 @@
-
+/*
 // FILE: card_demo.cpp
 // This is a small demonstration program showing how the Card and Deck classes are used.
 #include <iostream>    // Provides cout and cin
@@ -42,3 +42,4 @@ void dealHand(Deck &d, Player &p, int numCards)
     for (int i=0; i < numCards; i++)
         p.addCard(d.dealCard());
 }
+*/

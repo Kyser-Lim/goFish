@@ -13,6 +13,10 @@ CMakeFiles/goFish.dir/deck.cpp.o: ../card.h
 CMakeFiles/goFish.dir/deck.cpp.o: ../deck.cpp
 CMakeFiles/goFish.dir/deck.cpp.o: ../deck.h
 
+CMakeFiles/goFish.dir/go_fish.cpp.o: ../card.h
+CMakeFiles/goFish.dir/go_fish.cpp.o: ../deck.h
+CMakeFiles/goFish.dir/go_fish.cpp.o: ../go_fish.cpp
+
 CMakeFiles/goFish.dir/player.cpp.o: ../card.h
 CMakeFiles/goFish.dir/player.cpp.o: ../player.cpp
 CMakeFiles/goFish.dir/player.cpp.o: ../player.h

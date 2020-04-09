@@ -33,6 +33,8 @@ public:
 
     int  size() const; // # cards left in the deck
 
+    void swap(int index1, int index2);
+
 private:
 
     Card myCards[SIZE];
