@@ -11,7 +11,6 @@
 
     void Player::addCard(Card c)
     {
-
     }
 
     void Player::bookCards(Card c1, Card c2)
