@@ -44,7 +44,6 @@
     void Deck::shuffle()
     {
         int randIndex;
-        srand(time_t(NULL)); //random set of number
 
         for(int i = 0; i < myIndex; i++)
         {
@@ -55,17 +54,14 @@
 
     Card Deck::dealCard()
     {
-        cout << "this is your index" << myIndex << endl;
 
         myIndex = myIndex - 1;
-        cout << "this is your index2" << myIndex << endl;
-
         return myCards[myIndex];
     }
 
     int Deck::size() const
     {
-        return 52;
+        return myIndex;
     }
 
     void Deck::swap(int index1, int index2)
@@ -78,7 +74,7 @@
 
     void Deck::display()
     {
-        for(int i = 0; i<myIndex; i++)
+        for(int i = 0; i< myIndex; i++)
         {
             cout << myCards[i] << endl;
         }

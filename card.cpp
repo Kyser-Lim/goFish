@@ -89,19 +89,13 @@ string Card::rankString(int r) const {
 
 bool Card::operator==(const Card &rhs) const {
 
-    if((myRank == rhs.getRank()) && (mySuit == rhs.mySuit)){
-        return true;
-    }
+    return myRank == rhs.getRank();
 
-    return false;
 }
 
 bool Card::operator!=(const Card &rhs) const {
 
-    if((myRank != rhs.getRank()) || (mySuit != rhs.mySuit)){
-        return true;
-    }
-    return false;
+    return myRank != rhs.getRank();
 }
 
 ostream& operator << (ostream& out, const Card& c){
