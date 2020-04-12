@@ -12,9 +12,25 @@ iostream
 string
 -
 
-/Users/kendricklim/Desktop/GitHub/goFish/player.cpp
+/Users/kendricklim/Desktop/GitHub/goFish/deck.h
+card.h
+/Users/kendricklim/Desktop/GitHub/goFish/card.h
+
+/Users/kendricklim/Desktop/GitHub/goFish/go_fish.cpp
+card.h
+/Users/kendricklim/Desktop/GitHub/goFish/card.h
+deck.h
+/Users/kendricklim/Desktop/GitHub/goFish/deck.h
 player.h
 /Users/kendricklim/Desktop/GitHub/goFish/player.h
+time.h
+-
+stdlib.h
+-
+iostream
+-
+cstdlib
+-
 
 /Users/kendricklim/Desktop/GitHub/goFish/player.h
 iostream

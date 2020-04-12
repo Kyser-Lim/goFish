@@ -20,20 +20,7 @@ Card::Card(int rank, Card::Suit s) {
 }
 
 string Card::toString() const {
-
-    string rank = rankString(myRank);
-    if(!(stoi(rank) > 1 && stoi(rank) < 11)){
-        switch(stoi(rank)){
-            case 1 : rank = "A";
-            break;
-            case 11 : rank = "J";
-            break;
-            case 12 : rank = "Q";
-            break;
-            case 13 : rank = "K";
-            break;
-        }
-    }
+    string rank = rankString(myRank);  //turns myRank into a string
     string suit = suitString(mySuit);
     string card = rank + suit;
     return card;
@@ -83,6 +70,19 @@ string Card::suitString(Card::Suit s) const {
 string Card::rankString(int r) const {
 
     string rank = std::to_string(static_cast<long long> (r));
+
+    if(!(stoi(rank) > 1 && stoi(rank) < 11)){
+        switch(stoi(rank)){
+            case 1 : rank = "A";
+                break;
+            case 11 : rank = "J";
+                break;
+            case 12 : rank = "Q";
+                break;
+            case 13 : rank = "K";
+                break;
+        }
+    }
     return rank;
 
 }

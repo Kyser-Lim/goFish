@@ -54,8 +54,8 @@
 
     Card Deck::dealCard()
     {
-
         myIndex = myIndex - 1;
+        cout << "Card dealt: " << myCards[myIndex] << " Cards left in the deck: " << myIndex << endl;
         return myCards[myIndex];
     }
 

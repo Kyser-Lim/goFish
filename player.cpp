@@ -62,16 +62,20 @@
         return false;
     }
 
-    Card Player::removeCardFromHand(Card c)
+    Card Player::removeCardFromHand(Card c) //only removes it
     {
-        for(int i = 0; i < myHand.size(); i++){
-            if((c == myHand[i]) && (c.getSuit() == myHand[i].getSuit()))
+
+        for(int i = 0; i < myHand.size(); i++)
+        {
+            if((c == myHand[i]))
             {
-                swap(myHand[i], myHand.back());
+                swap(myHand[i], myHand.back()); //.back is the last one
             }
         }
-        myHand.pop_back();
-        return myHand[0];
+        c = myHand.back();
+        myHand.pop_back(); //deletes the last element
+
+        return c; //alter
     }
 
     string Player::showHand() const
@@ -106,7 +110,7 @@
     {
         return myBook.size()/2;
     }
-
+/*
     bool Player::checkHandForPair(Card &c1, Card &c2)
     {
         return false;
@@ -116,3 +120,4 @@
     {
         return false;
     }
+    */
