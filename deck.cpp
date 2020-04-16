@@ -73,9 +73,12 @@
 
     void Deck::display() //extra function to display deck... debugging purpose
     {
+        int x = 1;
+
         for(int i = 0; i< myIndex; i++)
         {
-            cout << myCards[i] << endl;
+            cout << x << myCards[i] << endl;
+            x++;
         }
     }
 

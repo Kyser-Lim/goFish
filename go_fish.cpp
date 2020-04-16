@@ -50,20 +50,28 @@ int main()
     dealHand(d, p1, numCards);
     dealHand(d, p2, numCards);
 
-    if(p1.checkHandForBook(c1CheckTemp, c2CheckTemp))  //if start with a pair in hand
+
+    for(int k = 0; k < p1.getHandSize(); k++)
     {
-        p1.bookCards(c1CheckTemp, c2CheckTemp);
-        myFile << "\n" << p1.getName() << "'s books: " << endl;
-        myFile << p1.showBooks() << endl;
+        if (p1.checkHandForBook(c1CheckTemp, c2CheckTemp))  //if start with a pair in hand
+        {
+            p1.bookCards(c1CheckTemp, c2CheckTemp);
+            myFile << "\n" << p1.getName() << "'s books: " << endl;
+            myFile << p1.showBooks() << endl;
+            k = 0;
+        }
     }
 
-    if(p2.checkHandForBook(c1CheckTemp, c2CheckTemp))  //^^
+    for(int k = 0; k < p2.getHandSize(); k++)
     {
-        p2.bookCards(c1CheckTemp, c2CheckTemp);
-        myFile << p2.getName() <<"'s' books:" << endl;
-        myFile << p2.showBooks() << endl;
+        if (p2.checkHandForBook(c1CheckTemp, c2CheckTemp))  //^^
+        {
+            p2.bookCards(c1CheckTemp, c2CheckTemp);
+            myFile << p2.getName() << "'s' books:" << endl;
+            myFile << p2.showBooks() << endl;
+            k = 0;
+        }
     }
-
 
     //start game
     while(d.size() != 0 )
@@ -87,12 +95,15 @@ int main()
                     anotherTurn = false;
                     myFile << p2.getName() << " says - Go Fish!" << endl;
                 }
-
-                if (p1.checkHandForBook(c1CheckTemp, c2CheckTemp))   //if pair in hand after add. This will work if card is chosen correctly
+                for(int k = 0; k < p1.getHandSize(); k++)
                 {
-                    p1.bookCards(c1CheckTemp, c2CheckTemp);
-                    myFile << "\n\n" << p1.getName() << "'s books: " << endl;
-                    myFile << p1.showBooks() << endl;
+                    if (p1.checkHandForBook(c1CheckTemp,
+                                            c2CheckTemp))   //if pair in hand after add. This will work if card is chosen correctly
+                    {
+                        p1.bookCards(c1CheckTemp, c2CheckTemp);
+                        myFile << "\n\n" << p1.getName() << "'s books: " << endl;
+                        myFile << p1.showBooks() << endl;
+                    }
                 }
             }
 
@@ -119,14 +130,16 @@ int main()
             p1.addCard(d.dealCard());   //go fish is a success
         }
 
-        if (p1.checkHandForBook(c1CheckTemp, c2CheckTemp))   //if pair in hand after add
+        for(int k = 0; k < p1.getHandSize(); k++)
         {
-            p1.bookCards(c1CheckTemp, c2CheckTemp);
-            myFile << p1.getName() << "says - I got the fish!" << endl;
-            myFile << "\n\n" << p1.getName() << "'s books: " << endl;
-            myFile << p1.showBooks() << endl;
+            if (p1.checkHandForBook(c1CheckTemp, c2CheckTemp))   //if pair in hand after add
+            {
+                p1.bookCards(c1CheckTemp, c2CheckTemp);
+                myFile << p1.getName() << "says - I got the fish!" << endl;
+                myFile << "\n\n" << p1.getName() << "'s books: " << endl;
+                myFile << p1.showBooks() << endl;
+            }
         }
-
 
         do //player 2
         {
@@ -148,11 +161,14 @@ int main()
                     myFile << p1.getName() << " says - Go Fish!" << endl;
                 }
 
-                if (p2.checkHandForBook(c1CheckTemp, c2CheckTemp))   //if pair in hand after add
+                for(int k = 0; k < p2.getHandSize(); k++)
                 {
-                    p2.bookCards(c1CheckTemp, c2CheckTemp);
-                    myFile << p2.getName() << "'s' books:" << endl;
-                    myFile << p2.showBooks() << endl;
+                    if (p2.checkHandForBook(c1CheckTemp, c2CheckTemp))   //if pair in hand after add
+                    {
+                        p2.bookCards(c1CheckTemp, c2CheckTemp);
+                        myFile << p2.getName() << "'s' books:" << endl;
+                        myFile << p2.showBooks() << endl;
+                    }
                 }
             }
 
@@ -181,12 +197,15 @@ int main()
             p2.addCard(d.dealCard());   //go fish is a success
         }
 
-        if (p2.checkHandForBook(c1CheckTemp, c2CheckTemp))   //if pair in hand after add
+        for(int k = 0; k < p2.getHandSize(); k++)
         {
-            p2.bookCards(c1CheckTemp, c2CheckTemp);
-            myFile << p1.getName() << "says - I got the fish!" << endl;
-            myFile << p2.getName() <<"'s books:" << endl;
-            myFile << p2.showBooks() << endl;
+            if (p2.checkHandForBook(c1CheckTemp, c2CheckTemp))   //if pair in hand after add
+            {
+                p2.bookCards(c1CheckTemp, c2CheckTemp);
+                myFile << p1.getName() << "says - I got the fish!" << endl;
+                myFile << p2.getName() << "'s books:" << endl;
+                myFile << p2.showBooks() << endl;
+            }
         }
     }
 
