@@ -10,6 +10,7 @@
 #include <iostream>    // Provides cout and cin
 #include <cstdlib>     // Provides EXIT_SUCCESS
 #include <fstream>
+#include <stdio.h>
 
 using namespace std;
 
@@ -17,21 +18,21 @@ void dealHand(Deck &d, Player &p, int numCards);
 
 int main()
 {
+    srand(time(NULL));    //seed time so that it is random
+
     ofstream myFile;
-    myFile.open("goFish.txt");
+    myFile.clear();    //so that it is a clean result output each time
+    myFile.open("gofish_results.txt");
     if(myFile.is_open())
     {
         cout << "success" << endl;
-        myFile << "This is Go Fish!";
-
+        myFile << "This is Go Fish!" << endl;
     }
     else{
         cout << "failed to open file" << endl;
     }
 
-
-    int numCards = 7;
-    int whoseTurn = 0;
+    int numCards = 7; //for a two player game
     Card c1CheckTemp;
     Card c2CheckTemp;
     Card chosen;
@@ -43,72 +44,77 @@ int main()
     Player p2("Jane");
 
     Deck d;  //create a deck of cards
+
     d.shuffle();
 
     dealHand(d, p1, numCards);
     dealHand(d, p2, numCards);
 
-//    cout << p1.getName() <<" has : " << p1.showHand() << endl;
-//    cout << p2.getName() <<" has : " << p2.showHand() << endl;
-
-    if(p1.checkHandForBook(c1CheckTemp, c2CheckTemp))  //if starts with a pair in hand
+    if(p1.checkHandForBook(c1CheckTemp, c2CheckTemp))  //if start with a pair in hand
     {
         p1.bookCards(c1CheckTemp, c2CheckTemp);
         myFile << "\n" << p1.getName() << "'s books: " << endl;
         myFile << p1.showBooks() << endl;
     }
+
     if(p2.checkHandForBook(c1CheckTemp, c2CheckTemp))  //^^
     {
         p2.bookCards(c1CheckTemp, c2CheckTemp);
         myFile << p2.getName() <<"'s' books:" << endl;
         myFile << p2.showBooks() << endl;
     }
-    //start loop
-    //start with player 1
+
+
+    //start game
     while(d.size() != 0 )
     {
-        do {
-
-            chosen = p1.chooseCardFromHand();
-            rank = chosen.getRank();
-            myFile << p1.getName() << " asks - Do you have a " << chosen.rankString(rank) << endl; //chooses a card in hand
-            if (p2.cardInHand(chosen))  //cardInHand asks for the rank   //asks if other player has the card
+        do //this is player 1's loop
+        {
+            if(p1.getHandSize() > 0) //to ensure that you do not draw from an empty hand
             {
-                myFile << p2.getName() << " says - Yes. I have a " << chosen.rankString(rank) << endl;
-                p1.addCard(p2.removeCardFromHand(chosen));              //if other does, then give to asker
+                chosen = p1.chooseCardFromHand();    //chooses card in hand
+                rank = chosen.getRank();
+                myFile << p1.getName() << " asks - Do you have a " << chosen.rankString(rank) << endl; //asks a card in hand
 
-                anotherTurn = true;
-            } else  //other does not then go fish
-            {
-                anotherTurn = false;
-                myFile << p2.getName() << " says - Go Fish!" << endl;
+                if (p2.cardInHand(chosen))  //cardInHand asks for the rank   //asks if other player has the card
+                {
+                    myFile << p2.getName() << " says - Yes. I have a " << chosen.rankString(rank) << endl;
+                    p1.addCard(p2.removeCardFromHand(chosen));              //if other does, then give to asker
+                    anotherTurn = true;
+                }
+                else  //other does not then go fish
+                {
+                    anotherTurn = false;
+                    myFile << p2.getName() << " says - Go Fish!" << endl;
+                }
+
+                if (p1.checkHandForBook(c1CheckTemp, c2CheckTemp))   //if pair in hand after add. This will work if card is chosen correctly
+                {
+                    p1.bookCards(c1CheckTemp, c2CheckTemp);
+                    myFile << "\n\n" << p1.getName() << "'s books: " << endl;
+                    myFile << p1.showBooks() << endl;
+                }
             }
 
-            if (p1.checkHandForBook(c1CheckTemp, c2CheckTemp))   //if pair in hand after add
+            if(p1.getHandSize() == 0 && d.size() != 0) //if empty hand and there are still cards in deck, then draw at least 7
             {
-                p1.bookCards(c1CheckTemp, c2CheckTemp);
-                myFile << "\n\n" << p1.getName() << "'s books: " << endl;
-                myFile << p1.showBooks() << endl;
-            }
-
-            if(p1.getHandSize() == 0 && d.size() != 0)
-            {
-
-                if(d.size() < numCards)
+                if(d.size() < numCards)    //draw 7 if there is >= 7 cards in deck else draw remaining
                 {
                     newNumCards = d.size();
-                } else{
+                }
+                else
+                {
                     newNumCards = numCards;
                 }
                 dealHand(d, p1, newNumCards);
             }
-            if(p2.getHandSize() == 0 && d.size() == 0)
+            if(p2.getHandSize() == 0 && d.size() == 0) //if both are empty, then game over
             {
                 anotherTurn = false;
             }
         } while (anotherTurn);
 
-        if(d.size() != 0) //fishinggggg
+        if(d.size() != 0) //fishing
         {
             p1.addCard(d.dealCard());   //go fish is a success
         }
@@ -116,36 +122,38 @@ int main()
         if (p1.checkHandForBook(c1CheckTemp, c2CheckTemp))   //if pair in hand after add
         {
             p1.bookCards(c1CheckTemp, c2CheckTemp);
-
+            myFile << p1.getName() << "says - I got the fish!" << endl;
             myFile << "\n\n" << p1.getName() << "'s books: " << endl;
             myFile << p1.showBooks() << endl;
         }
 
-//        cout << "Joe's hand: " << p1.showHand() << endl;
-//        cout << "Jane's hand: " << p2.showHand() << endl;
 
         do //player 2
         {
+            if(p2.getHandSize() > 0)
+            {
+                chosen = p2.chooseCardFromHand();
+                rank = chosen.getRank();
+                myFile << p2.getName() << " asks - Do you have a " << chosen.rankString(rank) << endl; //chooses a card in hand
 
-            chosen = p2.chooseCardFromHand();
-            rank = chosen.getRank();
-            myFile << p2.getName() << " asks - Do you have a " << chosen.rankString(rank) << endl; //chooses a card in hand
-            if (p1.cardInHand(chosen))                                   //asks if other player has the card
-            {
-                myFile << p1.getName() << " says - Yes. I have a " << chosen.rankString(rank) << endl;
-                p2.addCard(p1.removeCardFromHand(chosen));              //if other does, then give to asker
-                anotherTurn = true;
-            } else  //other does not then go fish
-            {
-                anotherTurn = false;
-                myFile << p1.getName() << " says - Go Fish!" << endl;
-            }
+                if (p1.cardInHand(chosen))                                   //asks if other player has the card
+                {
+                    myFile << p1.getName() << " says - Yes. I have a " << chosen.rankString(rank) << endl;
+                    p2.addCard(p1.removeCardFromHand(chosen));              //if other does, then give to asker
+                    anotherTurn = true;
+                }
+                else  //other does not then go fish
+                {
+                    anotherTurn = false;
+                    myFile << p1.getName() << " says - Go Fish!" << endl;
+                }
 
-            if (p2.checkHandForBook(c1CheckTemp, c2CheckTemp))   //if pair in hand after add
-            {
-                p2.bookCards(c1CheckTemp, c2CheckTemp);
-                myFile << p2.getName() <<"'s' books:" << endl;
-                myFile << p2.showBooks() << endl;
+                if (p2.checkHandForBook(c1CheckTemp, c2CheckTemp))   //if pair in hand after add
+                {
+                    p2.bookCards(c1CheckTemp, c2CheckTemp);
+                    myFile << p2.getName() << "'s' books:" << endl;
+                    myFile << p2.showBooks() << endl;
+                }
             }
 
             if(p2.getHandSize() == 0 && d.size() != 0)
@@ -154,11 +162,14 @@ int main()
                 if(d.size() < numCards)
                 {
                     newNumCards = d.size();
-                }else{
+                }
+                else
+                {
                     newNumCards = numCards;
                 }
                 dealHand(d, p2, newNumCards);
             }
+
             if(p2.getHandSize() == 0 && d.size() == 0)
             {
                 anotherTurn = false;
@@ -169,12 +180,11 @@ int main()
         {
             p2.addCard(d.dealCard());   //go fish is a success
         }
-//        cout << "Joe's hand: " << p1.showHand() << endl;
-//        cout << "Jane's hand: " << p2.showHand() << endl;
 
         if (p2.checkHandForBook(c1CheckTemp, c2CheckTemp))   //if pair in hand after add
         {
             p2.bookCards(c1CheckTemp, c2CheckTemp);
+            myFile << p1.getName() << "says - I got the fish!" << endl;
             myFile << p2.getName() <<"'s books:" << endl;
             myFile << p2.showBooks() << endl;
         }
@@ -201,11 +211,16 @@ int main()
     cout << "This is " << p2.getName() << "'s hand:" << endl;
     cout << p2.showHand() << endl;
 */
-    if(p1.getHandSize() < p2.getBookSize())
+    if(p1.getBookSize() < p2.getBookSize())
     {
         myFile << p2.getName() << " won!!!" << endl;
     }
-    else{
+    else if(p1.getBookSize() == p2.getBookSize())
+    {
+        myFile << p1.getName() << " and " << p2.getName() << " tied." << endl;
+    }
+    else
+    {
         myFile << p1.getName() << " won!!!" << endl;
     }
 

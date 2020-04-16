@@ -21,7 +21,6 @@
         myBook.push_back(c2);
         removeCardFromHand(c1);
         removeCardFromHand(c2);
-
     }
 
     bool Player::checkHandForBook(Card &c1, Card &c2)
@@ -46,7 +45,9 @@
 
     Card Player::chooseCardFromHand() const
     {
+
         int randCard = rand() % myHand.size();
+//        cout<< "player card funct";
         Card chosenCard = myHand[randCard];
         return chosenCard;
 

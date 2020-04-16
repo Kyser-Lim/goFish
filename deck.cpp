@@ -5,10 +5,11 @@
 #include "deck.h"
 #include <vector>
 #include <stdlib.h>
+#include <time.h>
 
     Deck::Deck()
     {
-        myIndex = 52;
+        myIndex = 52;    //this initializes a deck
         int rank = 1;
 
         for(int i = 0; i < 13; i++)
@@ -44,7 +45,6 @@
     void Deck::shuffle()
     {
         int randIndex;
-
         for(int i = 0; i < myIndex; i++)
         {
             randIndex = rand() % myIndex; //gets a number within 0 and 52
@@ -55,7 +55,6 @@
     Card Deck::dealCard()
     {
         myIndex = myIndex - 1;
-//        cout << "Card dealt: " << myCards[myIndex] << " Cards left in the deck: " << myIndex << endl;
         return myCards[myIndex];
     }
 
@@ -72,7 +71,7 @@
         myCards[index2] = temp;
     }
 
-    void Deck::display()
+    void Deck::display() //extra function to display deck... debugging purpose
     {
         for(int i = 0; i< myIndex; i++)
         {

@@ -1,0 +1,358 @@
+This is Go Fish!
+
+Joe's books: 
+Qd Qh 
+
+Jane's' books:
+3c 3s 
+
+Joe asks - Do you have a 7
+Jane says - Go Fish!
+Joesays - I got the fish!
+
+
+Joe's books: 
+Qd Qh 
+5s 5d 
+
+Jane asks - Do you have a J
+Joe says - Go Fish!
+Joe asks - Do you have a 3
+Jane says - Go Fish!
+Joesays - I got the fish!
+
+
+Joe's books: 
+Qd Qh 
+5s 5d 
+10h 10s 
+
+Jane asks - Do you have a 4
+Joe says - Go Fish!
+Joesays - I got the fish!
+Jane's books:
+3c 3s 
+8h 8s 
+
+Joe asks - Do you have a 3
+Jane says - Go Fish!
+Jane asks - Do you have a K
+Joe says - Go Fish!
+Joesays - I got the fish!
+Jane's books:
+3c 3s 
+8h 8s 
+Jd Js 
+
+Joe asks - Do you have a 8
+Jane says - Go Fish!
+Jane asks - Do you have a 4
+Joe says - Go Fish!
+Joe asks - Do you have a 3
+Jane says - Go Fish!
+Jane asks - Do you have a K
+Joe says - Go Fish!
+Joesays - I got the fish!
+Jane's books:
+3c 3s 
+8h 8s 
+Jd Js 
+Kc Ks 
+
+Joe asks - Do you have a 2
+Jane says - Go Fish!
+Joesays - I got the fish!
+
+
+Joe's books: 
+Qd Qh 
+5s 5d 
+10h 10s 
+5c 5h 
+
+Jane asks - Do you have a 6
+Joe says - Go Fish!
+Joesays - I got the fish!
+Jane's books:
+3c 3s 
+8h 8s 
+Jd Js 
+Kc Ks 
+6c 6s 
+
+Joe asks - Do you have a 2
+Jane says - Go Fish!
+Jane asks - Do you have a 8
+Joe says - Yes. I have a 8
+Jane's' books:
+3c 3s 
+8h 8s 
+Jd Js 
+Kc Ks 
+6c 6s 
+8c 8d 
+
+Jane asks - Do you have a 4
+Joe says - Go Fish!
+Joesays - I got the fish!
+Jane's books:
+3c 3s 
+8h 8s 
+Jd Js 
+Kc Ks 
+6c 6s 
+8c 8d 
+Ah Ac 
+
+Joe asks - Do you have a 9
+Jane says - Go Fish!
+Jane asks - Do you have a 4
+Joe says - Yes. I have a 4
+Jane's' books:
+3c 3s 
+8h 8s 
+Jd Js 
+Kc Ks 
+6c 6s 
+8c 8d 
+Ah Ac 
+4s 4h 
+
+Jane asks - Do you have a K
+Joe says - Go Fish!
+Jane's' books:
+3c 3s 
+8h 8s 
+Jd Js 
+Kc Ks 
+6c 6s 
+8c 8d 
+Ah Ac 
+4s 4h 
+Kh Kd 
+
+Joe asks - Do you have a 7
+Jane says - Yes. I have a 7
+
+
+Joe's books: 
+Qd Qh 
+5s 5d 
+10h 10s 
+5c 5h 
+7c 7s 
+
+Joe asks - Do you have a 9
+Jane says - Yes. I have a 9
+
+
+Joe's books: 
+Qd Qh 
+5s 5d 
+10h 10s 
+5c 5h 
+7c 7s 
+9h 9c 
+
+Joe asks - Do you have a 6
+Jane says - Go Fish!
+Joesays - I got the fish!
+
+
+Joe's books: 
+Qd Qh 
+5s 5d 
+10h 10s 
+5c 5h 
+7c 7s 
+9h 9c 
+6h 6d 
+
+Jane asks - Do you have a 2
+Joe says - Yes. I have a 2
+Jane's' books:
+3c 3s 
+8h 8s 
+Jd Js 
+Kc Ks 
+6c 6s 
+8c 8d 
+Ah Ac 
+4s 4h 
+Kh Kd 
+2d 2h 
+
+Jane asks - Do you have a 4
+Joe says - Go Fish!
+Joe asks - Do you have a 3
+Jane says - Go Fish!
+Jane asks - Do you have a J
+Joe says - Go Fish!
+Joe asks - Do you have a 10
+Jane says - Yes. I have a 10
+
+
+Joe's books: 
+Qd Qh 
+5s 5d 
+10h 10s 
+5c 5h 
+7c 7s 
+9h 9c 
+6h 6d 
+10c 10d 
+
+Joe asks - Do you have a 3
+Jane says - Go Fish!
+Jane asks - Do you have a J
+Joe says - Go Fish!
+Joesays - I got the fish!
+Jane's books:
+3c 3s 
+8h 8s 
+Jd Js 
+Kc Ks 
+6c 6s 
+8c 8d 
+Ah Ac 
+4s 4h 
+Kh Kd 
+2d 2h 
+Jc Jh 
+
+Joe asks - Do you have a Q
+Jane says - Yes. I have a Q
+
+
+Joe's books: 
+Qd Qh 
+5s 5d 
+10h 10s 
+5c 5h 
+7c 7s 
+9h 9c 
+6h 6d 
+10c 10d 
+Qc Qs 
+
+Joe asks - Do you have a 3
+Jane says - Go Fish!
+Joesays - I got the fish!
+
+
+Joe's books: 
+Qd Qh 
+5s 5d 
+10h 10s 
+5c 5h 
+7c 7s 
+9h 9c 
+6h 6d 
+10c 10d 
+Qc Qs 
+3h 3d 
+
+Jane asks - Do you have a A
+Joe says - Go Fish!
+Joesays - I got the fish!
+
+
+Joe's books: 
+Qd Qh 
+5s 5d 
+10h 10s 
+5c 5h 
+7c 7s 
+9h 9c 
+6h 6d 
+10c 10d 
+Qc Qs 
+3h 3d 
+9d 9s 
+
+Jane asks - Do you have a A
+Joe says - Yes. I have a A
+Jane's' books:
+3c 3s 
+8h 8s 
+Jd Js 
+Kc Ks 
+6c 6s 
+8c 8d 
+Ah Ac 
+4s 4h 
+Kh Kd 
+2d 2h 
+Jc Jh 
+As Ad 
+
+Jane asks - Do you have a 4
+Joe says - Yes. I have a 4
+Jane's' books:
+3c 3s 
+8h 8s 
+Jd Js 
+Kc Ks 
+6c 6s 
+8c 8d 
+Ah Ac 
+4s 4h 
+Kh Kd 
+2d 2h 
+Jc Jh 
+As Ad 
+4c 4d 
+
+Jane asks - Do you have a 7
+Joe says - Yes. I have a 7
+Jane's' books:
+3c 3s 
+8h 8s 
+Jd Js 
+Kc Ks 
+6c 6s 
+8c 8d 
+Ah Ac 
+4s 4h 
+Kh Kd 
+2d 2h 
+Jc Jh 
+As Ad 
+4c 4d 
+7d 7h 
+
+Left in the deck: 
+
+Joe's books: 
+Qd Qh 
+5s 5d 
+10h 10s 
+5c 5h 
+7c 7s 
+9h 9c 
+6h 6d 
+10c 10d 
+Qc Qs 
+3h 3d 
+9d 9s 
+
+Amount: 11
+
+Jane's' books:
+3c 3s 
+8h 8s 
+Jd Js 
+Kc Ks 
+6c 6s 
+8c 8d 
+Ah Ac 
+4s 4h 
+Kh Kd 
+2d 2h 
+Jc Jh 
+As Ad 
+4c 4d 
+7d 7h 
+
+Amount: 14
+Jane won!!!

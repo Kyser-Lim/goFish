@@ -10,8 +10,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
-
+#include <time.h>
 #include "card.h"
 using namespace std;
 
